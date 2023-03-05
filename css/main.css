@@ -1,0 +1,77 @@
+/* Default Settings */
+h2 {
+    color:#124948;
+}
+
+
+
+
+
+/* Header */
+.header {
+    background-image: url("../imgs/Background.png");
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.header .name {
+    color: white;
+    height: 30%;
+    position: relative;
+}
+
+.header .name p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5vw;
+
+}
+
+.header .profile {
+    /* text-align: center; */
+    background-color: white;
+    width: 80%;
+    margin: 0px auto;
+    /* display: inline-block; */
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.header .profile div{
+    /* display: inline-block; */
+}
+
+.header .profile-image{
+    /* width: 50%; */
+    /* text-align: left; */
+}
+
+.header img.profile-image{
+    width: 30%;
+    margin: 10px;
+}
+
+.header .profile-statement {
+}
+
+
+/* Body */
+
+.body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.body .left {
+    grid-column: 0 / 1;
+}
+
+.body .left {
+    grid-column: 1 / 2;
+}
+
+/* Footer */
