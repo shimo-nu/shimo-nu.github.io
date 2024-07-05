@@ -1,0 +1,217 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 1600px) {
+  body {
+      width: 1600px;
+      margin: 0 auto;
+  }
+}
+
+.header {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.header .name {
+  margin-bottom: 10px;
+}
+
+.header .hollow {
+  font-size: 5vh;
+  font-weight: bold;
+  font-family: 'sans-serif';
+  margin: 10px;
+}
+
+.header .profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header .profile-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  object-fit: cover;
+}
+
+.header .profile-statement {
+  font-size: 16px;
+  color: #333;
+}
+
+.header nav {
+  margin-top: 20px;
+}
+
+.header nav {
+  margin-top: 20px;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 16px;
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-button:hover {
+  color: #000;
+}
+
+.nav-button::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-button.active::after {
+  width: 100%;
+}
+
+.corkboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* 中心から均等に配置 */
+  align-items: flex-start;
+  width: 80%;
+  min-height: calc(100vh - 140px); /* ヘッダーの高さ分を引いた最小高さを設定 */
+  background-size: cover;
+  background-position: center;
+  position: relative; /* メモを相対配置するための親要素として設定 */
+  padding: 20px;
+  overflow: hidden;
+  margin: 20px auto; /* ヘッダーとメモの間の余白を設定し、中央に寄せる */
+}
+
+.note {
+  flex: 0 1 calc(40% - 40px); /* 2列に配置し、左右の余白を含める */
+  margin: 20px; /* 上下左右の余白 */
+  width: 200px;
+  height: 220px;
+  padding: 20px;
+  background-color: #fffde7;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.5s, opacity 1s;
+  border-radius: 10px;
+  opacity: 0;
+  border: 1px solid #ddd;
+  word-wrap: break-word; /* 長い単語を折り返す */
+  height: auto; /* 高さを自動調整 */
+}
+
+.note h2 {
+  margin-top: 0;
+  font-weight: 700;
+  color: #333;
+}
+
+.note p {
+  margin: 0;
+  color: #555;
+  white-space: pre-wrap; /* テキストの折り返しを有効にする */
+  overflow: hidden; /* メモからはみ出さないようにする */
+  text-overflow: ellipsis; /* 長いテキストの末尾に省略記号を追加 */
+}
+
+.note.text_left p{
+  text-align: left;
+}
+
+.tape {
+  width: 60px;
+  height: 20px;
+  background: #d3a625;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-5deg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  z-index: 1;
+  background: linear-gradient(135deg, #d3a625, #f0c14b);
+}
+
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.8);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+
+
+@media (max-width: 800px) {
+  .corkboard {
+    grid-template-columns: 1fr; 
+      margin: 10px auto;
+  }
+  .note {
+      width: 100%;
+      flex: auto;
+  }
+}
+
+
+.photo-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.photo-page img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+
+/* 表示アニメーション */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.8);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+/* マウスオーバー時の拡大 */
+.note.enlarged {
+  transform: scale(1.1);
+  z-index: 2;
+}
