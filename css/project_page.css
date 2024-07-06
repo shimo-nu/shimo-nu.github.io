@@ -1,4 +1,6 @@
 .project-page .note {
   background-color: #E6E6E6	;
   opacity: 1!important;
+  text-align:justify;
+  /* width: 80%; */
 }

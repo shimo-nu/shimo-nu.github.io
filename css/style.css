@@ -16,9 +16,10 @@ body {
 }
  
 hr {
-  margin: 5px;
-  width: 80%;
-  height: 1px;
+  border: none;
+  border-top: 1px dotted #000;
+  width:80%;
+  margin: 3px auto; 
 }
 
 span.bold {
@@ -161,13 +162,14 @@ span.bold {
 .note p {
   margin: 0;
   color: #555;
-  white-space: pre-wrap; /* テキストの折り返しを有効にする */
-  overflow: hidden; /* メモからはみ出さないようにする */
-  text-overflow: ellipsis; /* 長いテキストの末尾に省略記号を追加 */
+  white-space: pre-wrap;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
 }
 
 .note.text_left p{
   text-align: left;
+  margin: 10px 0;
 }
 
 .tape {
