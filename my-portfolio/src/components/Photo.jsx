@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const PhotoLibrary = ({ images, columns, maxImagesPerPage }) => {
   // const [images, setImages] = useState([]);
@@ -53,13 +53,17 @@ const PhotoLibrary = ({ images, columns, maxImagesPerPage }) => {
         {renderImages()}
       </div>
       <div className="pagination">
-        <button onClick={handlePreviousPage} disabled={currentPage === 1}>
-          <FontAwesomeIcon icon={faArrowLeft} />
-        </button>
-        <span>{` ${currentPage} of ${totalPages}`}</span>
-        <button onClick={handleNextPage} disabled={currentPage === totalPages}>
-          <FontAwesomeIcon icon={faArrowRight} />
-        </button>
+        <FontAwesomeIcon
+          icon={faChevronLeft}
+          className={`icon ${currentPage === 1 ? 'disabled' : ''}`}
+          onClick={handlePreviousPage}
+        />
+        <span>{` ${currentPage} of ${totalPages} `}</span>
+        <FontAwesomeIcon
+          icon={faChevronRight}
+          className={`icon ${currentPage === totalPages ? 'disabled' : ''}`}
+          onClick={handleNextPage}
+        />
       </div>
       {modalImage && (
         <div className="modal" onClick={closeModal}>
@@ -80,7 +84,7 @@ const Photo = () => {
   ];
 
   return (
-    <div>
+    <div className='photo_library'>
       <h1>Photo Library</h1>
       <PhotoLibrary images={images} columns={columns} maxImagesPerPage={maxImagesPerPage} />
     </div>

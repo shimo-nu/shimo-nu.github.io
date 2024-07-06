@@ -17,6 +17,8 @@ body {
  
 hr {
   margin: 5px;
+  width: 80%;
+  height: 1px;
 }
 
 span.bold {
@@ -117,6 +119,18 @@ span.bold {
   margin: 20px auto; /* ヘッダーとメモの間の余白を設定し、中央に寄せる */
 }
 
+@media (max-width: 820px) {
+  .corkboard {
+    flex-direction: column;
+  }
+
+  .left_layout, .right_layout {
+    width: 100%!important;
+    margin-top: 10px;
+
+  }
+}
+
 .left_layout, .right_layout {
   display: flex;
   flex-direction: column;
@@ -184,16 +198,7 @@ span.bold {
 
 
 
-@media (max-width: 800px) {
-  .corkboard {
-    grid-template-columns: 1fr; 
-      margin: 10px auto;
-  }
-  .note {
-      width: 100%;
-      flex: auto;
-  }
-}
+
 
 
 /* .photo-page {
@@ -243,7 +248,7 @@ span.bold {
 }
 
 .pagination {
-  margin-top: 20px;
+  margin: 40px;
 }
 
 .modal {

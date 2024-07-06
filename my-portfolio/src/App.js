@@ -5,17 +5,19 @@ import AboutMe from './components/AboutMe';
 import Photo from './components/Photo';
 import SNS from './components/SNS';
 import './App.css';
-import Blog from './components/Contact';
+import Blog from './components/Blog';
+import Project from './components/Project';
 
 const App = () => {
-    const [page, setPage] = useState('about');
+    const [page, setPage] = useState('project');
 
     return (
         <div className="App">
             <Header onSelectPage={setPage} selectedPage={page}/>
             {page === 'about' && <AboutMe />}
             {page === 'photo' && <Photo />}
-            {page === 'contact' && <Blog />}
+            {page === 'blog' && <Blog />}
+            {page === 'project' && <Project />}
             <SNS />
         </div>
     );

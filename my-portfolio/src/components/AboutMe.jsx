@@ -36,14 +36,13 @@ const AboutMe = () => {
                     <h2>スキル</h2>
                     <h3>ロボット開発</h3>
                     <p>Python, C++</p>
-                    <p>Unity, Gazebo, ROS, ROS2</p>
+                    <p>Unity, Gazebo, ROS, ROS2, Autoware</p>
                     <h3>Web開発</h3>
                     <p>HTML, CSS, JavaScript</p>
                     <p>React, Django</p>
                     <h3>データ分析</h3>
                     <p>Python, R</p>
                     <p>Keras, PyTorch</p>
-
                     <h3>その他</h3>
                     <p>C, Java, Go, SQL</p>
                     <p></p>
