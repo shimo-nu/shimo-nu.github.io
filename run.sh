@@ -1,4 +1,4 @@
-
+#!/bin/bash
 IMAGE=react-webpage
 
 docker run \
