@@ -1,0 +1,269 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 1600px) {
+  .App {
+      width: 1600px;
+      margin: 0 auto;
+  }
+}
+ 
+hr {
+  margin: 5px;
+  width: 80%;
+  height: 1px;
+}
+
+span.bold {
+  font-weight: bold;
+}
+
+.header {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.header .name {
+  margin-bottom: 10px;
+}
+
+.header .hollow {
+  font-size: 5vh;
+  font-weight: bold;
+  font-family: 'sans-serif';
+  margin: 10px;
+}
+
+.header .profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header .profile-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  object-fit: cover;
+}
+
+.header .profile-statement {
+  font-size: 16px;
+  color: #333;
+}
+
+.header nav {
+  margin-top: 20px;
+}
+
+.header nav {
+  margin-top: 20px;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 16px;
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-button:hover {
+  color: #000;
+}
+
+.nav-button::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-button.active::after {
+  width: 100%;
+}
+
+.corkboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* 中心から均等に配置 */
+  align-items: flex-start;
+  width: 80%;
+  min-height: calc(100vh - 140px); /* ヘッダーの高さ分を引いた最小高さを設定 */
+  background-size: cover;
+  background-position: center;
+  position: relative; /* メモを相対配置するための親要素として設定 */
+  padding: 20px;
+  overflow: hidden;
+  margin: 20px auto; /* ヘッダーとメモの間の余白を設定し、中央に寄せる */
+}
+
+@media (max-width: 820px) {
+  .corkboard {
+    flex-direction: column;
+  }
+
+  .left_layout, .right_layout {
+    width: 100%!important;
+    margin-top: 10px;
+
+  }
+}
+
+.left_layout, .right_layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: calc(50% - 20px); 
+}
+
+.note {
+  height: auto; 
+  overflow: visible;
+  background-color: #fffde7;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border: 1px solid #ddd;
+  position: relative; 
+  word-wrap: break-word;
+  opacity: 0;
+  transition: transform 0.5s, opacity 1s;
+}
+
+.note h2 {
+  margin-top: 0;
+  font-weight: 700;
+  color: #333;
+}
+
+.note p {
+  margin: 0;
+  color: #555;
+  white-space: pre-wrap; /* テキストの折り返しを有効にする */
+  overflow: hidden; /* メモからはみ出さないようにする */
+  text-overflow: ellipsis; /* 長いテキストの末尾に省略記号を追加 */
+}
+
+.note.text_left p{
+  text-align: left;
+}
+
+.tape {
+  width: 60px;
+  height: 20px;
+  background: #d3a625;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-5deg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  z-index: 1;
+  background: linear-gradient(135deg, #d3a625, #f0c14b);
+}
+
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.8);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+
+
+
+
+
+/* .photo-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.photo-page img {
+  width: 40%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  margin: 10px;
+  object-fit: cover;
+} */
+
+.photo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.photo-item {
+  width: calc(50% - 10px);
+  margin-bottom: 20px;
+}
+
+.photo-inner {
+  position: relative;
+  padding-bottom: 56.25%; 
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.photo-inner img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pagination {
+  margin: 40px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+}

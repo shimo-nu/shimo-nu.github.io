@@ -1,0 +1,101 @@
+/* Default Settings */
+h2 {
+    color:#124948;
+    text-align: center;
+}
+p.hollow {
+    font-weight: bold;
+    color: transparent;
+    background-color: white;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-shadow: 0.1em 0.3em 0.02em rgb(10 4 4 / 16%);
+}
+
+
+/* Header */
+.header {
+    background-image: url("../imgs/Background.png");
+    text-align: center;
+    padding-bottom: 50px;
+
+    height: 80%;
+}
+
+.header .name {
+    color: white;
+    height: 60%;
+    position: relative;
+    width: auto;
+}
+
+.header .name p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4vw;
+}
+
+
+.header .profile {
+    /* text-align: center; */
+    background-color: white;
+    width: 80%;
+    margin: 0px auto;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.header .profile div{
+    /* display: inline-block; */
+}
+
+.header .profile-image{
+    /* width: 50%; */
+    /* text-align: left; */
+    width: 25%;
+    margin: 15px;
+}
+
+.header .profile-image img{
+    object-fit: contain;
+    max-width: 100%;
+    height: auto;
+}
+
+.header .profile-statement {
+    flex-grow: 1;
+}
+
+
+/* Body */
+
+.body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+}
+
+.body .card {
+    background-color: silver;
+    border-radius: 10px;
+    margin: 10px;
+    width: 85%;
+    height: 90%;
+}
+
+.body .left {
+    grid-column: 0 / 1;
+}
+
+.body .right {
+
+}
+
+/* Footer */
+
+
+
+
