@@ -9,10 +9,18 @@ body {
 }
 
 @media (min-width: 1600px) {
-  body {
+  .App {
       width: 1600px;
       margin: 0 auto;
   }
+}
+ 
+hr {
+  margin: 5px;
+}
+
+span.bold {
+  font-weight: bold;
 }
 
 .header {
@@ -109,20 +117,25 @@ body {
   margin: 20px auto; /* ヘッダーとメモの間の余白を設定し、中央に寄せる */
 }
 
+.left_layout, .right_layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: calc(50% - 20px); 
+}
+
 .note {
-  flex: 0 1 calc(40% - 40px); /* 2列に配置し、左右の余白を含める */
-  margin: 20px; /* 上下左右の余白 */
-  width: 200px;
-  height: 220px;
-  padding: 20px;
+  height: auto; 
+  overflow: visible;
   background-color: #fffde7;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.5s, opacity 1s;
+  padding: 20px;
   border-radius: 10px;
-  opacity: 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   border: 1px solid #ddd;
-  word-wrap: break-word; /* 長い単語を折り返す */
-  height: auto; /* 高さを自動調整 */
+  position: relative; 
+  word-wrap: break-word;
+  opacity: 0;
+  transition: transform 0.5s, opacity 1s;
 }
 
 .note h2 {
@@ -183,35 +196,69 @@ body {
 }
 
 
-.photo-page {
+/* .photo-page {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 80vh;
+  overflow: hidden;
 }
 
 .photo-page img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 40%;
+  height: auto;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  margin: 10px;
+  object-fit: cover;
+} */
+
+.photo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
 }
 
-
-/* 表示アニメーション */
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-      transform: scale(0.8);
-  }
-  to {
-      opacity: 1;
-      transform: scale(1);
-  }
+.photo-item {
+  width: calc(50% - 10px);
+  margin-bottom: 20px;
 }
 
-/* マウスオーバー時の拡大 */
-.note.enlarged {
-  transform: scale(1.1);
-  z-index: 2;
+.photo-inner {
+  position: relative;
+  padding-bottom: 56.25%; 
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.photo-inner img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pagination {
+  margin-top: 20px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
 }

@@ -7,11 +7,9 @@ const Blog = () => {
   
 
     return (
-       return (
-        <div>
+        <div className='blog-page'>
             comming soon...
         </div>
-       ); 
     );
 };
 

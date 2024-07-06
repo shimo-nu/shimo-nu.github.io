@@ -11,7 +11,7 @@ const Header = ({ onSelectPage, selectedPage }) => {
                 <div className="profile-image">
                     <img src={`${window.location.origin}/imgs/profile_img.jpg`} alt="shimo face" />
                 </div>
-                <p className="profile-statement">名古屋大学　工学研究科　博士課程2年 在籍中</p>
+                <p className="profile-statement">名古屋大学大学院 工学研究科 <br/>博士課程3年</p>
             </div>
             <nav>
                 <button 
@@ -31,6 +31,12 @@ const Header = ({ onSelectPage, selectedPage }) => {
                     onClick={() => onSelectPage('blog')}
                 >
                     Blog
+                </button>
+                <button 
+                    className={`nav-button ${selectedPage === 'project' ? 'active' : ''}`} 
+                    onClick={() => onSelectPage('project')}
+                >
+                    Project
                 </button>
             </nav>
         </div>
