@@ -1,0 +1,113 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.header .name {
+  margin-bottom: 10px;
+}
+
+.header .hollow {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header .profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header .profile-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.header .profile-statement {
+  font-size: 16px;
+  color: #333;
+}
+
+.corkboard {
+  width: 60%;
+  height: 80%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  /* box-shadow: 0 10px 30px rgba(0,0,0,0.1); */
+  border-radius: 15px;
+  padding: 20px;
+  overflow: hidden; /* メモがはみ出さないようにする */
+}
+
+.note {
+  width: 320px;
+  padding: 20px;
+  background-color: #fffde7;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  position: absolute;
+  transform: rotate(-2deg);
+  transition: transform 0.5s, opacity 1s;
+  border-radius: 10px;
+  opacity: 0;
+  border: 1px solid #ddd;
+}
+
+.note h2 {
+  margin-top: 0;
+  font-weight: 700;
+  color: #333;
+}
+
+.note p {
+  margin: 0;
+  color: #555;
+}
+
+/* マスキングテープのスタイル */
+.tape {
+  width: 60px;
+  height: 20px;
+  background: #d3a625;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-5deg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  z-index: 1;
+  background: linear-gradient(135deg, #d3a625, #f0c14b);
+}
+
+/* 表示アニメーション */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.8);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+/* マウスオーバー時の拡大 */
+.note.enlarged {
+  transform: scale(1.1);
+  z-index: 2;
+}
