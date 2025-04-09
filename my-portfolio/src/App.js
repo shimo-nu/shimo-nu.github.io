@@ -17,7 +17,7 @@ const App = () => {
             {page === 'about' && <AboutMe />}
             {page === 'photo' && <Photo />}
             {page === 'blog' && <Blog />}
-            {page === 'project' && <Project />}
+            {/* {page === 'project' && <Project />} */}
             <SNS />
         </div>
     );
