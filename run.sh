@@ -1,5 +1,11 @@
 #!/bin/bash
+IMAGE=react-webpage
 
-HOSTDIR=/mnt/bigdata/00_students/shimo_nis/shimo-nu.github.io
-
-docker run -d -v $HOSTDIR:/usr/local/apache2/htdocs -p 11188:80 httpd
+docker run \
+    -it \
+    --rm \
+    -v ${PWD}:/reactapp \
+    -p 13000:3000 \
+    -e CHOKIDAR_USEPOLLING=true \
+    $IMAGE:latest
+    bash
